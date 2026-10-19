@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f4f1eb">
   <meta name="description" content="My 90-day personal goals.">
-  <title>My 90-Day Vision Board</title>
+  <title>９０日間　ボード</title>
   <style>
     :root {
       --paper: #f4f1eb;
@@ -260,9 +260,11 @@
 
       const elapsed = Math.floor((today - startDay) / DAY_MS);
       const dayNumber = Math.min(90, Math.max(1, elapsed + 1));
+      // Count the current day as part of the 90-day plan:
+      // Day 1 shows 90 days left; Day 90 shows 1 day left.
       const daysLeft = today < startDay
-        ? Math.ceil((startDay - today) / DAY_MS) + 89
-        : Math.max(0, Math.ceil((addDays(endDay, 1) - today) / DAY_MS));
+        ? 90
+        : Math.max(1, 90 - elapsed);
 
       document.getElementById('days-left').textContent = daysLeft;
       document.getElementById('overall-progress').style.width =
