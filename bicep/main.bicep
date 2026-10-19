@@ -21,7 +21,7 @@ module swa './swa.bicep' = {
   scope: rg
   params: {
     name: '${prefix}app-${suffix}'
-    location: eastasia // "The provided location 'japaneast' is not available for resource type 'Microsoft.Web/staticSites'. List of available regions for the resource type is 'centralus,eastus2,westus2,westeurope,eastasia'."}
+    location: 'eastasia' // "The provided location 'japaneast' is not available for resource type 'Microsoft.Web/staticSites'. List of available regions for the resource type is 'centralus,eastus2,westus2,westeurope,eastasia'."}
     sku: 'Free'
   }
 }
