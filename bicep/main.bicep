@@ -24,6 +24,10 @@ module swa './swa.bicep' = {
   }
 }
 
+/*
+["indonesiacentral","centralindia","koreacentral","japaneast","malaysiawest"]
+*/
+
 @description('Output the default hostname')
 output endpoint string = swa.outputs.defaultHostname
 
