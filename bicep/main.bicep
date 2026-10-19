@@ -3,9 +3,6 @@ targetScope = 'subscription'
 param rgLocation string = 'japaneast'
 param swaLocation string = 'eastasia'
 
-@description('String to make resource names unique')
-var resourceToken = uniqueString(subscription().subscriptionId, location)
-
 var suffix = substring(subscription().id, length(subscription().id) - 4, 4)
 var resourceGroupName = 'board-${suffix}'
 var prefix = 'board'
