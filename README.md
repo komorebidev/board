@@ -1,9 +1,5 @@
 # board
 
-* Code for deploying static web app for vision board
-
-# Vision Board
-
 A simple, responsive static website for setting and visualizing personal goals over a 90-day period.
 
 ## Main Features
