@@ -1,6 +1,7 @@
 targetScope = 'subscription'
 
-param location string = 'japaneast'
+param rgLocation string = 'japaneast'
+param swaLocation string = 'eastasia'
 
 @description('String to make resource names unique')
 var resourceToken = uniqueString(subscription().subscriptionId, location)
@@ -12,7 +13,7 @@ var prefix = 'board'
 @description('Create a resource group')
 resource rg 'Microsoft.Resources/resourceGroups@2024-03-01' = {
   name: resourceGroupName
-  location: location
+  location: rgLocation
 }
 
 @description('Create a static web app')
@@ -21,7 +22,7 @@ module swa './swa.bicep' = {
   scope: rg
   params: {
     name: '${prefix}app-${suffix}'
-    location: 'eastasia' // "The provided location 'japaneast' is not available for resource type 'Microsoft.Web/staticSites'. List of available regions for the resource type is 'centralus,eastus2,westus2,westeurope,eastasia'."}
+    location: swaLocation // "The provided location 'japaneast' is not available for resource type 'Microsoft.Web/staticSites'. List of available regions for the resource type is 'centralus,eastus2,westus2,westeurope,eastasia'."}
     sku: 'Free'
   }
 }
